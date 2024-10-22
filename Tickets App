@@ -1,0 +1,88 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Transfer Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Ticket Transfer </h2>
+<form id="ticketTransferForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telephone">Telephone Number:</label>
+    <input type="tel" id="telephone" name="telephone" required>
+
+    <label for="ticketType">Ticket Type:</label>
+    <select id="ticketType" name="ticketType" required>
+        <option value="">Select Ticket Type</option>
+        <option value="VIP">VIP</option>
+        <option value="Regular">General Admission</option>
+        <option value="Student">Adult</option>
+    </select>
+
+    <label for="numberOfTickets">Number of Tickets:</label>
+    <input type="number" id="numberOfTickets" name="numberOfTickets" min="1" required>
+
+    <input type="submit" value="Transfer Ticket">
+</form>
+
+<script>
+    document.getElementById("ticketTransferForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const telephone = document.getElementById("telephone").value;
+        const ticketType = document.getElementById("ticketType").value;
+        const numberOfTickets = document.getElementById("numberOfTickets").value;
+
+        alert("Ticket transferred to:\n" + 
+              "Full Name: " + fullName + "\n" + 
+              "Email: " + email + "\n" + 
+              "Telephone: " + telephone + "\n" + 
+              "Ticket Type: " + ticketType + "\n" + 
+              "Number of Tickets: " + numberOfTickets);
+    });
+</script>
+
+</body>
+</html>
